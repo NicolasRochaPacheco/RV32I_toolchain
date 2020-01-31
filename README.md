@@ -5,7 +5,7 @@ En este repositorio se encuentran los archivos necesarios para descargar, instal
 Para la instalación del toolchain de RV32I se debe ejecutar un script de bash contenido en este repositorio. Para la ejecución del script se debe ejecutar:
 
 ~~~~
-$ chown +x rv32i_toolchain_install.sh`
+$ chown +x rv32i_toolchain_install.sh
 $ ./rv32i_toolchain_install.sh
 ~~~~
 
