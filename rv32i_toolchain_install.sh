@@ -62,22 +62,29 @@ fi
 echo Descargando los archivos del toolchain de RISC-V.
 echo Esto puede tomar unos minutos
 mkdir -p $DOWNLOAD_PATH
-git clone --recursive https://github.com/riscv/riscv-gnu-toolchain \
-		$DOWNLOAD_PATH > $RV_LOG
+git clone https://github.com/riscv/riscv-gnu-toolchain $DOWNLOAD_PATH
+cd $DOWNLOAD_PATH
+git submodule --init --recursive
 echo Se han descargado los archivos
 
 # Configura el toolchain para RV32I
 echo Configurando el toolchain para RV32I
-.$DOWNLOAD_PATH/configure --prefix=$RISCV_PATH \
-		--with-arch=rv32i \
-		--with-abi=ilp32 > $RV_LOG
+./configure --prefix=$RISCV_PATH \
+			--with-arch=rv32i \
+			--with-abi=ilp32 > $RV_LOG
 
 # Instala el toolchain
 echo Instalando el toolchain
-make -C $DOWNLOAD_PATH > $RV_LOG
+make
 echo El toolchain ha sido instalado!
 
-#rm -r $DOWNLOAD_PATH
-#rm -r $RV_LOG
+# Elimina los archivos descargados para la instalación
+cd ~
+rm -r $DOWNLOAD_PATH
+rm -r $RV_LOG
 
+# Da permisos del usuario sobre la carpeta de instalación del toolchain
 sudo chown $USER $RISCV_PATH
+
+# Modifica la variable PATH para usar los binarios de RISC-V
+echo export PATH=${PATH}:$RISCV_PATH/bin >> ~/.bashrc 
