@@ -1,11 +1,13 @@
 int main(){
 
-	int a = 2;
+	/* Variable definitions */
+	int a, b, c;
 
-	int b = 3
+	/* Variable initialization */
+	a = 3;
+	b = 2;
 
-	int c;
-
+	/* Sum computation */
 	c = a + b;
 
 	return 0;
