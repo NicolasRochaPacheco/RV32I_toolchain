@@ -34,6 +34,15 @@ else
 	touch $RV_LOG
 fi
 
+if [[ -d $DOWNLOAD_PATH ]];
+then
+	sudo rm -r $DOWNLOAD_PATH
+	echo Directorio de descarga limpio!
+else
+	echo Directorio de descarga limpio!
+fi
+
+
 # Instala los prerequisitos 
 echo Instalando prerequisitos!
 sudo apt-get update > $RV_LOG
@@ -64,7 +73,7 @@ echo Esto puede tomar unos minutos
 mkdir -p $DOWNLOAD_PATH
 git clone https://github.com/riscv/riscv-gnu-toolchain $DOWNLOAD_PATH
 cd $DOWNLOAD_PATH
-git submodule --init --recursive
+git submodule update --init --recursive
 echo Se han descargado los archivos
 
 # Configura el toolchain para RV32I
@@ -75,13 +84,13 @@ echo Configurando el toolchain para RV32I
 
 # Instala el toolchain
 echo Instalando el toolchain
-make
+sudo make
 echo El toolchain ha sido instalado!
 
 # Elimina los archivos descargados para la instalación
 cd ~
-rm -r $DOWNLOAD_PATH
-rm -r $RV_LOG
+sudo rm -r $DOWNLOAD_PATH
+sudo rm -r $RV_LOG
 
 # Da permisos del usuario sobre la carpeta de instalación del toolchain
 sudo chown $USER $RISCV_PATH
