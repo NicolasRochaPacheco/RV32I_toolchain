@@ -97,3 +97,9 @@ sudo chown $USER $RISCV_PATH
 
 # Modifica la variable PATH para usar los binarios de RISC-V
 echo export PATH=${PATH}:$RISCV_PATH/bin >> ~/.bashrc
+
+# Ubica el directorio actual en la carpeta home
+cd ~
+
+# Le hace source al bashrc para reflejar los cambios
+source ~/.bashrc
