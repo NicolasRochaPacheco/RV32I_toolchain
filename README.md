@@ -31,7 +31,7 @@ Si el comando puede ser ejecutado sin ningún error, entonces el toolchain fue i
 Debido a que la mayoría de proyectos contienen múltiples archivos fuente, es necesario entender la metodología para compilar múltiples archivos.
 
 ~~~~
-$ riscv32-unknown-elf-gcc 
+$ riscv32-unknown-elf-gcc -o bin/multiple src/multiple_files_main.c src/int_functions.c
 ~~~~
 
 Si bien esta estrategia de compilación es útil, una mejor aproximación para lidiar con proyectos de múltiples archivos es utilizar un makefile. Vale la pena mencionar que un makefile no está limitado a proyectos escritos en C, sino que funciona para cualquier clase de proyecto.
@@ -42,7 +42,7 @@ Si bien esta estrategia de compilación es útil, una mejor aproximación para l
 Es posible utilizar el compilador para obtener el equivalente del programa en C en lenguaje ensamblador de RISC-V. Para obtener el equivalente de la suma de números enteros en C, en lenguaje ensamblador de RISC-V se debe ejecutar:
 
 ~~~~
-$ riscv32-unknown-elf-gcc -S -o asm/int_add.s src/int_add.s
+$ riscv32-unknown-elf-gcc -S -o asm/int_add.s src/int_add.c
 ~~~~
 
 Al ejecutarlo, el archivo ```asm/int_add.s``` contendrá el lenguaje ensamblador de RISC-V del programa de suma de números enteros. Para visualizar el archivo desde consola se puede ejecutar:
