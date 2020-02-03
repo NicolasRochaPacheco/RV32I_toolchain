@@ -31,7 +31,7 @@ Si el comando puede ser ejecutado sin ningún error, entonces el toolchain fue i
 Debido a que la mayoría de proyectos contienen múltiples archivos fuente, es necesario entender la metodología para compilar múltiples archivos.
 
 ~~~~
-$ riscv32-unknown-elf-gcc -o bin/multiple src/multiple_files_main.c src/int_functions.c
+$ riscv32-unknown-elf-gcc -o bin/multiple src/multiple_files_main.c src/int_functions.c -I include/RV32I_toolchain/
 ~~~~
 
 Si bien esta estrategia de compilación es útil, una mejor aproximación para lidiar con proyectos de múltiples archivos es utilizar un makefile. Vale la pena mencionar que un makefile no está limitado a proyectos escritos en C, sino que funciona para cualquier clase de proyecto.
@@ -50,8 +50,3 @@ Al ejecutarlo, el archivo ```asm/int_add.s``` contendrá el lenguaje ensamblador
 ~~~~
 $ cat asm/int_add.s
 ~~~~
-
-## Compilación de lenguaje ensamblador
-
-## Deconstrucción de un archivo binario
-
