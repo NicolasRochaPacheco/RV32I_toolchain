@@ -10,7 +10,7 @@ Para descargar el repositorio se debe ejecutar la siguiente línea de consola. E
 $ git clone https://github.com/NicolasRochaPacheco/RV32I_toolchain.git
 ~~~~
 
-El contenido del repositorio estará en una carpeta con nombre ```RV32I_toolchain"```.
+El contenido del repositorio estará en una carpeta con nombre ```RV32I_toolchain```.
 
 ## Instalación del toolchain
 
