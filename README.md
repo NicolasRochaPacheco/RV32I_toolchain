@@ -17,9 +17,10 @@ Al ejecutar este script se realizan las diferentes acciones necesarias para inst
 
 ## Verificación de la instalación
 
-Para verificar la instalación se debe ejecutar el comando de consola que se indica a continuación. Este comando va a compilar una adición entre dos números enteros y generar el archivo binario.
+Para verificar la instalación se debe ejecutar los comandos de consola que se indican a continuación. Estos comandos van a crear las carpetas ```bin``` y ```asm```, y luego va a compilar una adición entre dos números enteros y generar el archivo binario.
 
 ~~~~
+$ mkdir bin asm
 $ riscv32-unknown-elf-gcc ./src/int_add.c -o bin/int_add
 ~~~~
 
