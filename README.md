@@ -2,6 +2,15 @@
 
 En este repositorio se encuentran los archivos necesarios para descargar, instalar y usar el toolchain de GNU para la arquitectura RV32I de RISC-V. El objetivo de este tutorial es poder compilar un programa en C para RV32I, validando que se genera el lenguaje ensamblador y el lenguaje de máquina correcto. Esta validación es necesaria debido a que RISC-V tiene distintos objetivos de compilación.
 
+## Descarga del repositorio
+
+Para descargar el repositorio se debe ejecutar la siguiente línea de consola. Esto descargará el repositorio en el directorio actual.
+
+~~~~
+$ git clone https://github.com/NicolasRochaPacheco/RV32I_toolchain.git
+~~~~
+
+El contenido del repositorio estará en una carpeta con nombre ```RV32I_toolchain"```.
 
 ## Instalación del toolchain
 
