@@ -45,10 +45,10 @@ fi
 
 # Instala los prerequisitos 
 echo Instalando prerequisitos!
-sudo apt-get update > $RV_LOG
+sudo apt-get update
 sudo apt-get install autoconf automake autotools-dev curl python3 libmpc-dev \
 		libmpfr-dev libgmp-dev gawk build-essential	bison flex texinfo gperf \
-		libtool patchutils bc zlib1g-dev libexpat-dev > $RV_LOG
+		libtool patchutils bc zlib1g-dev libexpat-dev
 echo Los prerequisitos han sido instalados!
 
 # Revisa que el directorio en el cual se va a instalar el toolchain exista.
